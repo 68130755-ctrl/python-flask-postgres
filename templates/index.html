@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก</title>
+    <!-- โหลด Tailwind CSS เพื่อความสวยงาม -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md text-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">
+            Web Application ด้วย Flask & PostgreSQL
+        </h1>
+        
+        <div class="space-y-3 p-4 bg-gray-100 rounded-lg mb-6 border border-gray-200">
+            <p class="text-lg text-gray-700">
+                <span class="font-semibold text-indigo-600">ชื่อนักศึกษา:</span> {{ student_name }}
+            </p>
+            <p class="text-lg text-gray-700">
+                <span class="font-semibold text-indigo-600">รหัสประจำตัว:</span> {{ student_id }}
+            </p>
+        </div>
+        
+        <p class="text-gray-600 mb-6">
+            ข้อมูลที่ดึงมาจากฐานข้อมูล PostgreSQL แสดงในหน้าต่อไปนี้:
+        </p>
+
+        <a href="{{ url_for('movie_list') }}" 
+           class="inline-block px-6 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
+            ดูข้อมูลภาพยนตร์ (Movie List)
+        </a>
+    </div>
+</body>
+</html>
